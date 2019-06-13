@@ -1,17 +1,42 @@
-import React from 'react';
-import Topbar from './modules/Topbar';
-import RenderingTest from './modules/RenderingTest';
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import HeroList from './components/HeroList';
+import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
+//import Topbar from './components/Topbar';
 
-function App() {
+class App extends Component {
+  state = {
+    heroes: [
+      {
+        id: 1,
+        name: 'Erik',
+        age: 24
+      },
+      {
+        id: 2,
+        name: 'Jeffrey',
+        age: 25
+      }
+    ]
+
+  }
+
+  render(){
+    return (
+      <div className="App">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-12">
+              <h1>Hello world</h1>
+
+              <HeroList heroes={this.state.heroes}/>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
   
-  return (
-    <div className="tester">
-      <Topbar title="Dit is de titel"/>
-      <RenderingTest/>
-    </div>
-  );
 }
 
 export default App;
