@@ -16,6 +16,11 @@ class App extends Component {
         id: 2,
         name: 'Jeffrey',
         age: 25
+      },
+      {
+        id: 3,
+        name: 'Kirsten',
+        age: 20
       }
     ]
 
@@ -27,7 +32,7 @@ class App extends Component {
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
-              <h1>Hello world</h1>
+              <h1>Heroes</h1>
 
               <HeroList heroes={this.state.heroes}/>
             </div>
