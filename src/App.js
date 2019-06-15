@@ -5,25 +5,22 @@ import './App.css';
 //import Topbar from './components/Topbar';
 
 class App extends Component {
-  state = {
-    heroes: [
-      {
-        id: 1,
-        name: 'Erik',
-        age: 24
-      },
-      {
-        id: 2,
-        name: 'Jeffrey',
-        age: 25
-      },
-      {
-        id: 3,
-        name: 'Kirsten',
-        age: 20
-      }
-    ]
+  constructor() {
+    super()
+    this.state = {
+      heroes: [],
+    };
+  }
 
+  componentDidMount() {
+    fetch('https://www.superheroapi.com/api.php/2797859690255716/search/man')
+    .then(res => {
+      return res.json()
+    })
+    .then(data => {
+      let heroes = data.results
+      this.setState({heroes: heroes})
+    })
   }
 
   render(){
@@ -32,10 +29,12 @@ class App extends Component {
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
-              <h1>Heroes</h1>
-
-              <HeroList heroes={this.state.heroes}/>
+              <h1 className="site-title">Heroes</h1>
             </div>
+
+            <HeroList heroes={this.state.heroes}/>
+
+            
           </div>
         </div>
       </div>
@@ -43,5 +42,7 @@ class App extends Component {
   }
   
 }
+
+
 
 export default App;
