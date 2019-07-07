@@ -22,20 +22,7 @@ class App extends Component {
       this.setState({heroes: heroes})
     })
 
-    // const handleClicks = (e) => {
-    //   if(e.target.classList.contains('hero')){
-    //     e.target.querySelector('.hero__stats').classList.toggle('show')
-    //   }
-    // }
-
-    // document.addEventlistener('click', this.handleClicks)
   }
-
-  // componentWillUnmount() {
-  //   document.removeEventlistener('click', this.handleClicks)
-  // }
-
-
 
   render(){
     return (

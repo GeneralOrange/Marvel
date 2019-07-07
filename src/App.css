@@ -36,6 +36,7 @@
 }
 
 .hero__stats {
+	display: none;
 	text-align: left;
 	text-transform: capitalize;
 }

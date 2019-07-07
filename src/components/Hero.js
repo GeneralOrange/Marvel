@@ -3,7 +3,7 @@ import HeroStatsList from './HeroStatsList'
 
 export default class Hero extends Component {
 	showPowers = (e) => {
-		
+		console.log(this.props.hero.herostats)
 	}
 
     render() {
@@ -15,7 +15,7 @@ export default class Hero extends Component {
 
 	                <table className="hero__stats">
 						<tbody>
-							<HeroStatsList stats={this.props.hero.powerstats}/>
+							
 						</tbody>	
 	                </table>
 	            </div>
